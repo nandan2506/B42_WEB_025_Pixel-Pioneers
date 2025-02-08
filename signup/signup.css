@@ -1,0 +1,26 @@
+
+
+
+
+
+/* #social{
+    display: flex;
+    gap: 10px;
+} */
+
+#social a{
+    display: flex;
+    height: 54px;
+    width: 54px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+    /* padding: 5px; */
+}
+
+#social img{
+    height: 28px;
+    /* width: 28px;align-items: center;
+    justify-content: center; */
+}
