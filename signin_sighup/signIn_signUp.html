@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>signin</title>
     <link rel="stylesheet" href="./signIn_signUp.css">
+    <script type="module" src="./signin_singup.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/11.3.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.3.0/firebase-auth-compat.js"></script>
 </head>
 
 <body>
@@ -21,7 +25,7 @@
 
                 <section class="form">
 
-                    <div id="sign_in">
+                    <div id="sign_in" autocomplete="off">
                         <div class="header">
 
                             <h1>Sign in</h1>
@@ -35,11 +39,16 @@
 
                             <div class="email ">
                                 <label for="eml">Email Adderss</label><br>
-                                <input type="email" id="eml" required>
+                                <input type="email" class="eml1" required>
+                            </div>
+
+                            <div id="password">
+                                <label for="psd1">Pasword</label><br>
+                                <input type="password" class="psd" required>
                             </div>
 
                             <div class="Continue" style="display: flex; justify-content: flex-end;">
-                                <button>Continue</button>
+                                <button class="insubmit">Continue</button>
                             </div>
 
                             <div class="or">
@@ -78,7 +87,7 @@
 
 
 
-                    <div id="sign_up">
+                    <div id="sign_up" autocomplete="off">
                         <div class="header">
                             <p id="step">Step 1 of 2</p>
                             <h1>Creat an account</h1>
@@ -113,17 +122,17 @@
                             </div>
 
                             <div class="email ">
-                                <label for="em">Email Adderss</label><br>
-                                <input type="email" id="em" required>
+                                <label for="eml">Email Adderss</label><br>
+                                <input type="email" class="eml" required>
                             </div>
 
                             <div id="password">
                                 <label for="psd">Pasword</label><br>
-                                <input type="password" id="psd" required>
+                                <input type="password" class="psd" required>
                             </div>
 
                             <div class="Continue" style="display: flex; justify-content: flex-end;">
-                                <button>Continue</button>
+                                <button class="upsubmit">Continue</button>
                             </div>
 
                         </div>
@@ -138,4 +147,3 @@
 
 </html>
 
-<script src="./signin_singup.js"></script>

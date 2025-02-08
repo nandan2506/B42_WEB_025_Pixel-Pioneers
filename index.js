@@ -11,6 +11,7 @@
 
 function myProjects(arr) {
     let pro = document.getElementById("projects")
+    pro.innerHTML=''
 
     arr.forEach((element) => {
         const card = document.createElement("div")
@@ -52,6 +53,43 @@ function myProjects(arr) {
         pro.appendChild(card)
     });
 }
+
+const sort = document.getElementById("sort")
+
+sort.addEventListener("input" , ()=>{
+    (async function () {
+        try {
+            let res = await fetch('https://b42-web-025-pixel-pioneers-default-rtdb.firebaseio.com/projects.json')
+            let result = await res.json()
+            console.log(result)
+            if(sort.value== "pro"){
+                result=result.filter((ele) => ele.ispro == true)
+                myProjects(result)
+            }
+            else myProjects(result)
+        } catch (error) {
+            console.error(error)
+        }
+    })()
+})
+
+
+const search = document.querySelector(".search-input")
+
+search.addEventListener("input" , ()=>{
+    (async function () {
+        try {
+            let res = await fetch('https://b42-web-025-pixel-pioneers-default-rtdb.firebaseio.com/projects.json')
+            let result = await res.json()
+            console.log(result)
+            let arr = result.filter(el => el.title.toLowerCase().includes(search.value.toLowerCase()) )
+            myProjects(arr)
+        } catch (error) {
+            console.error(error)
+        }
+    })()
+})
+
 
 
 const cut = document.getElementById("s-head")
